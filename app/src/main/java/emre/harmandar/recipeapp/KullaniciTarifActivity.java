@@ -22,7 +22,8 @@ import emre.harmandar.recipeapp.Listeners.RandomRecipeResponseListener;
 import emre.harmandar.recipeapp.Listeners.RecipeClickListener;
 import emre.harmandar.recipeapp.Models.RandomRecipeApiResponse;
 
-public class MainActivity extends AppCompatActivity {
+public class KullaniciTarifActivity extends AppCompatActivity {
+
     ProgressDialog dialog;
     RequestManager manager;
     RandomRecipeAdapter randomRecipeAdapter;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_kullanici_tarif);
 
         dialog = new ProgressDialog(this);
         dialog.setTitle("Loading...");
@@ -68,23 +69,23 @@ public class MainActivity extends AppCompatActivity {
 
         manager = new RequestManager(this);
 //        manager.getRandomRecipes(randomRecipeResponseListener);
- //       dialog.show();
+        //       dialog.show();
     }
 
     private final RandomRecipeResponseListener randomRecipeResponseListener = new RandomRecipeResponseListener() {
         @Override
         public void didFetch(RandomRecipeApiResponse response, String message) {
             dialog.dismiss();
-            recyclerView = findViewById(R.id.recycler_random);
+            recyclerView = findViewById(R.id.rcvKullaniciTarifleri);
             recyclerView.setHasFixedSize(true);
-            recyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this, 1));
-            randomRecipeAdapter = new RandomRecipeAdapter(MainActivity.this, response.recipes, recipeClickListener);
+            recyclerView.setLayoutManager(new GridLayoutManager(KullaniciTarifActivity.this, 1));
+            randomRecipeAdapter = new RandomRecipeAdapter(KullaniciTarifActivity.this, response.recipes, recipeClickListener);
             recyclerView.setAdapter(randomRecipeAdapter);
         }
 
         @Override
         public void didError(String message) {
-            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+            Toast.makeText(KullaniciTarifActivity.this, message, Toast.LENGTH_SHORT).show();
         }
     };
 
@@ -106,11 +107,9 @@ public class MainActivity extends AppCompatActivity {
     private final RecipeClickListener recipeClickListener= new RecipeClickListener() {
         @Override
         public void onRecipeClicked(String id) {
-            startActivity(new Intent(MainActivity.this, RecipeDetailsActivity.class)
+            startActivity(new Intent(KullaniciTarifActivity.this, RecipeDetailsKullaniciActivity.class)
                     .putExtra("id", id));
         }
     };
-    public void kullaniciTariflerineYonlendir(View view){
-        startActivity(new Intent(MainActivity.this, KullaniciTarifActivity.class));
-    }
+
 }

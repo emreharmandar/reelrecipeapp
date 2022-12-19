@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "254255470456",
+    "project_id": "recipeapp-4785b",
+    "storage_bucket": "recipeapp-4785b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254255470456:android:68d0b995b3dabe37dc9a8d",
+        "android_client_info": {
+          "package_name": "emre.harmandar.recipeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254255470456-vre1jdu1db10qf7uft85vageufk1mac0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQD-NOeYdnnB51I0JnaT3XeEouK8GhfJ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254255470456-vre1jdu1db10qf7uft85vageufk1mac0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

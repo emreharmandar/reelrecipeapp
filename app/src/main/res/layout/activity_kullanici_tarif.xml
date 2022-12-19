@@ -29,10 +29,10 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Hazır Tarifler"
+                android:text="Kullanıcı Tarifleri"
                 android:layout_marginStart="5dp"
                 android:textSize="10dp"
-                android:onClick="kullaniciTariflerineYonlendir"
+                android:onClick="geridon"
                 />
             <Spinner
                 android:id="@+id/spinner_tags"
@@ -61,7 +61,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_random"
+        android:id="@+id/rcvKullaniciTarifleri"
         android:layout_margin="4dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
