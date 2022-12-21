@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class KullaniciTarifActivity extends AppCompatActivity {
     Spinner spinner;
     List<String> tags = new ArrayList<>();
     SearchView searchView;
+    Button btnHazirTarifegec;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +72,14 @@ public class KullaniciTarifActivity extends AppCompatActivity {
         manager = new RequestManager(this);
 //        manager.getRandomRecipes(randomRecipeResponseListener);
         //       dialog.show();
+        btnHazirTarifegec = (Button) findViewById(R.id.btnHazirTarifeYonlendir);
+        btnHazirTarifegec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(KullaniciTarifActivity.this, MainActivity.class));
+                finish();
+            }
+        });
     }
 
     private final RandomRecipeResponseListener randomRecipeResponseListener = new RandomRecipeResponseListener() {

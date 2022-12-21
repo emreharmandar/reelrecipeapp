@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     Spinner spinner;
     List<String> tags = new ArrayList<>();
     SearchView searchView;
+    Button btnKullaniciTarifeGec;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onQueryTextChange(String newText) {
                 return false;
             }
+
         });
 
         spinner = findViewById(R.id.spinner_tags);
@@ -69,6 +72,15 @@ public class MainActivity extends AppCompatActivity {
         manager = new RequestManager(this);
 //        manager.getRandomRecipes(randomRecipeResponseListener);
  //       dialog.show();
+
+        btnKullaniciTarifeGec = (Button) findViewById(R.id.btnKullaniciTarifeGit);
+        btnKullaniciTarifeGec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, KullaniciTarifActivity.class));
+                finish();
+            }
+        });
     }
 
     private final RandomRecipeResponseListener randomRecipeResponseListener = new RandomRecipeResponseListener() {
