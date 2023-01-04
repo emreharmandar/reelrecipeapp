@@ -15,7 +15,7 @@
         android:hint="Enter password"
         android:inputType="textPersonName"
         android:textColor="#0E0C0C"
-        android:textColorHint="@color/black"
+        android:textColorHint="#9A8B8B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
         android:hint="Enter email"
         android:inputType="textPersonName"
         android:textColor="#040303"
-        android:textColorHint="#0B0A0A"
+        android:textColorHint="#978989"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
